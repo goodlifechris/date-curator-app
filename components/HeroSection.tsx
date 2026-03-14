@@ -114,7 +114,7 @@ export default function HeroSection({ containerRef }: Props) {
             animation: "fadeUp 1s ease 0.8s forwards",
           }}
         >
-          Curating Extraordinary Moments
+          Curating Extraordinary Love Moments
         </p>
 
         {/* Headline */}

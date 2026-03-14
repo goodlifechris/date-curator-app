@@ -50,52 +50,45 @@ export default function BottomNav({ containerRef }: Props) {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-6 px-8 pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <nav
-        className="pointer-events-auto flex items-center gap-0 px-4 py-[10px]"
+        className="pointer-events-auto flex items-center justify-between w-full max-w-md px-6 py-4"
         style={{
           background: "rgba(10,10,10,0.88)",
           backdropFilter: "blur(20px)",
           border: "1px solid rgba(201,168,76,0.15)",
+          borderRadius: "24px",
+          margin: "0 auto 20px auto",
         }}
       >
         {navItems.map(({ label, Icon, sectionIdx }, i) => (
-          <div key={label} className="flex items-center">
-            {i > 0 && (
-              <div
-                className="w-px mx-3"
-                style={{ height: "24px", background: "var(--dark-border)" }}
-              />
-            )}
-            <button
-              onClick={() => scrollTo(sectionIdx)}
-              className={`nav-item-link flex flex-col items-center gap-[3px] px-5 py-2 transition-all duration-300 ${
-                getActiveNav(sectionIdx) ? "active" : ""
-              }`}
+          <button
+            key={label}
+            onClick={() => scrollTo(sectionIdx)}
+            className="flex flex-col items-center gap-1 transition-all duration-300 flex-1"
+          >
+            <Icon
+              size={20}
+              strokeWidth={1.5}
+              className="transition-colors duration-300"
+              style={{
+                color: getActiveNav(sectionIdx)
+                  ? "var(--gold)"
+                  : "var(--text-muted)",
+              }}
+            />
+            <span
+              className="text-[9px] tracking-[0.15em] uppercase transition-colors duration-300 whitespace-nowrap"
+              style={{
+                fontFamily: "var(--font-cinzel)",
+                color: getActiveNav(sectionIdx)
+                  ? "var(--gold)"
+                  : "var(--text-muted)",
+              }}
             >
-              <Icon
-                size={18}
-                strokeWidth={1.5}
-                className="transition-colors duration-300"
-                style={{
-                  color: getActiveNav(sectionIdx)
-                    ? "var(--gold)"
-                    : "var(--text-muted)",
-                }}
-              />
-              <span
-                className="text-[10px] tracking-[0.2em] uppercase transition-colors duration-300"
-                style={{
-                  fontFamily: "var(--font-cinzel)",
-                  color: getActiveNav(sectionIdx)
-                    ? "var(--gold)"
-                    : "var(--text-muted)",
-                }}
-              >
-                {label}
-              </span>
-            </button>
-          </div>
+              {label}
+            </span>
+          </button>
         ))}
       </nav>
     </div>
