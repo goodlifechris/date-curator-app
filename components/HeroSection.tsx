@@ -37,27 +37,36 @@ export default function HeroSection({ containerRef }: Props) {
       <div
         className="orb"
         style={{
-          width: 600, height: 600,
-          top: -150, right: -150,
-          background: "radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%)",
+          width: 600,
+          height: 600,
+          top: -150,
+          right: -150,
+          background:
+            "radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%)",
           animation: "orbFloat1 12s ease-in-out infinite",
         }}
       />
       <div
         className="orb"
         style={{
-          width: 400, height: 400,
-          bottom: -100, left: -100,
-          background: "radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",
+          width: 400,
+          height: 400,
+          bottom: -100,
+          left: -100,
+          background:
+            "radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",
           animation: "orbFloat2 15s ease-in-out infinite",
         }}
       />
       <div
         className="orb"
         style={{
-          width: 200, height: 200,
-          top: "30%", left: "10%",
-          background: "radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%)",
+          width: 200,
+          height: 200,
+          top: "30%",
+          left: "10%",
+          background:
+            "radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%)",
           animation: "orbFloat1 20s ease-in-out infinite reverse",
         }}
       />
@@ -66,7 +75,9 @@ export default function HeroSection({ containerRef }: Props) {
       <div
         className="deco-line"
         style={{
-          width: 300, top: "15%", left: "5%",
+          width: 300,
+          top: "15%",
+          left: "5%",
           transform: "rotate(-15deg)",
           animation: "goldPulse 4s ease-in-out infinite",
         }}
@@ -74,7 +85,9 @@ export default function HeroSection({ containerRef }: Props) {
       <div
         className="deco-line"
         style={{
-          width: 200, bottom: "20%", right: "8%",
+          width: 200,
+          bottom: "20%",
+          right: "8%",
           transform: "rotate(20deg)",
           animation: "goldPulse 4s ease-in-out infinite 2s",
         }}
@@ -88,8 +101,9 @@ export default function HeroSection({ containerRef }: Props) {
         {/* Logo */}
         <div
           style={{
-            animation: "scaleIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards, float 6s ease-in-out 1.5s infinite",
-            
+            animation:
+              "scaleIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards, float 6s ease-in-out 1.5s infinite",
+
             marginBottom: "2.5rem",
           }}
         >
@@ -158,11 +172,15 @@ export default function HeroSection({ containerRef }: Props) {
             style={{
               height: 1,
               width: 80,
-              background: "linear-gradient(90deg, transparent, var(--gold), transparent)",
+              background:
+                "linear-gradient(90deg, transparent, var(--gold), transparent)",
             }}
           />
           <span
-            style={{ color: "var(--gold)", animation: "heartbeat 2s ease-in-out infinite 2s" }}
+            style={{
+              color: "var(--gold)",
+              animation: "heartbeat 2s ease-in-out infinite 2s",
+            }}
           >
             ♥
           </span>
@@ -170,30 +188,57 @@ export default function HeroSection({ containerRef }: Props) {
             style={{
               height: 1,
               width: 80,
-              background: "linear-gradient(90deg, transparent, var(--gold), transparent)",
+              background:
+                "linear-gradient(90deg, transparent, var(--gold), transparent)",
             }}
           />
         </div>
 
-        {/* CTA Button */}
-        <div style={{ opacity: 0, animation: "fadeUp 1s ease 1.6s forwards" }}>
-          <button
-            onClick={scrollToExplore}
-            className="hero-outline-btn inline-flex items-center gap-4 px-12 py-4"
-            style={{
-              border: "1px solid var(--gold)",
-              color: "var(--gold)",
-              fontFamily: "var(--font-cinzel)",
-              fontSize: "0.75rem",
-              fontWeight: 400,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              background: "transparent",
-            }}
+        <div className="flex gap-5">
+          {/* Plan My Date */}
+          <div
+            style={{ opacity: 0, animation: "fadeUp 1s ease 1.6s forwards" }}
           >
-            <span className="relative z-[1]">Explore Experiences</span>
-            <span className="relative z-[1]">→</span>
-          </button>
+            <button
+              onClick={scrollToExplore}
+              className="hero-outline-btn inline-flex items-center gap-4 px-12 py-4"
+              style={{
+                border: "1px solid var(--gold)",
+                color: "var(--gold)",
+                fontFamily: "var(--font-cinzel)",
+                fontSize: "0.75rem",
+                fontWeight: 400,
+                letterSpacing: "0.3em",
+                textTransform: "uppercase",
+                background: "transparent",
+              }}
+            >
+              <span className="relative z-[1]">Plan My Date</span>
+              <span className="relative z-[1]">→</span>
+            </button>
+          </div>
+          {/* CTA Button */}
+          <div
+            style={{ opacity: 0, animation: "fadeUp 1s ease 1.6s forwards" }}
+          >
+            <button
+              onClick={scrollToExplore}
+              className="hero-outline-btn inline-flex items-center gap-4 px-12 py-4"
+              style={{
+                border: "1px solid var(--gold)",
+                color: "var(--gold)",
+                fontFamily: "var(--font-cinzel)",
+                fontSize: "0.75rem",
+                fontWeight: 400,
+                letterSpacing: "0.3em",
+                textTransform: "uppercase",
+                background: "transparent",
+              }}
+            >
+              <span className="relative z-[1]">Explore Experiences</span>
+              <span className="relative z-[1]">→</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -207,7 +252,8 @@ export default function HeroSection({ containerRef }: Props) {
           flexDirection: "column",
           alignItems: "center",
           gap: 8,
-          animation: "fadeIn 1s ease 2.5s forwards, scrollBounce 2s ease-in-out 3.5s infinite",
+          animation:
+            "fadeIn 1s ease 2.5s forwards, scrollBounce 2s ease-in-out 3.5s infinite",
           opacity: 0,
           background: "none",
           border: "none",
@@ -215,7 +261,10 @@ export default function HeroSection({ containerRef }: Props) {
       >
         <span
           className="text-[10px] tracking-[0.3em] uppercase"
-          style={{ color: "var(--text-muted)", fontFamily: "var(--font-montserrat)" }}
+          style={{
+            color: "var(--text-muted)",
+            fontFamily: "var(--font-montserrat)",
+          }}
         >
           Scroll
         </span>

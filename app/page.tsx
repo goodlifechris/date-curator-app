@@ -8,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import StorySection from "@/components/StorySection";
 import ExploreSection from "@/components/ExploreSection";
 import CTASection from "@/components/CTASection";
+import HeroSectionWithVideos from "@/components/HeroSectionWithVideos";
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,8 @@ export default function HomePage() {
         id="scroll-container"
         className="scroll-snap-container"
       >
+
+        <HeroSectionWithVideos containerRef={containerRef} />
         {/* Section 1 — Hero */}
         <HeroSection containerRef={containerRef} />
 

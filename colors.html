@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant soft palette · color divs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f7f4;  /* very light warm background, like paper */
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 2rem;
+        }
+
+        .palette-container {
+            max-width: 1100px;
+            width: 100%;
+            background: transparent;
+        }
+
+        /* subtle headings to separate primary / secondary / accent */
+        .role-hint {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9b8f83;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 0.35rem;
+        }
+
+        .swatch-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        /* each color div = soft square + metadata */
+        .color-div {
+            width: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08),
+                        0 4px 8px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: white; /* behind the color block, but color covers most */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        /* the actual colorful rectangle */
+        .color-swatch {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0.9rem;
+        }
+
+        /* tiny badge inside swatch (optional) shows depth */
+        .hex-badge {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            padding: 0.3rem 0.7rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #2e2e2e;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .color-meta {
+            padding: 1rem 1rem 1.2rem 1rem;
+            background: white;
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #3d352e;
+            margin-bottom: 0.35rem;
+        }
+
+        .color-rgb {
+            font-size: 0.8rem;
+            color: #8f7f72;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.2px;
+            border-top: 1px dashed #f0eae4;
+            padding-top: 0.5rem;
+            margin-top: 0.3rem;
+        }
+
+        /* individual backgrounds for each color */
+        .swatch-champagne { background: #F7E7CE; }  /* champagne gold */
+        .swatch-cream { background: #F5F0E6; }      /* soft cream / ivory */
+        .swatch-blush { background: #F2D7D5; }      /* blush pink */
+        .swatch-beige { background: #E5D9CC; }      /* warm beige */
+        .swatch-black { background: #2C2C2C; }      /* soft black */
+
+        /* for black swatch, make badge text readable */
+        .black-badge {
+            background: rgba(44, 44, 44, 0.75);
+            color: #f0f0f0;
+            border-color: rgba(255,255,255,0.2);
+        }
+        /* meta text remains independent, but inside black div it's fine because meta has white bg */
+
+        /* layout groups */
+        .group-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #9b8b7a;
+            margin: 2rem 0 1rem 0.2rem;
+            border-left: 4px solid #E5D9CC;
+            padding-left: 1rem;
+        }
+        .group-title.first {
+            margin-top: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dotted #E5D9CC;
+            opacity: 0.5;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="palette-container">
+
+        <!-- PRIMARY COLORS  (champagne + cream) -->
+        <div class="group-title first">◈ primary · foundation</div>
+        <div class="swatch-grid">
+            <!-- champagne gold div -->
+            <div class="color-div">
+                <div class="color-swatch swatch-champagne">
+                    <span class="hex-badge">#F7E7CE</span>
+                </div>
+                <div class="color-meta">
+                    <div class="color-name">Champagne gold</div>
+                    <div class="color-rgb">rgb(247, 231, 206)</div>
+                </div>
+            </div>
+
+            <!-- soft cream / ivory div -->
+            <div class="color-div">
+                <div class="color-swatch swatch-cream">
+                    <span class="hex-badge">#F5F0E6</span>
+                </div>
+                <div class="color-meta">
+                    <div class="color-name">Soft cream / ivory</div>
+                    <div class="color-rgb">rgb(245, 240, 230)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECONDARY COLORS (blush + warm beige) -->
+        <div class="group-title">◈ secondary · warmth</div>
+        <div class="swatch-grid">
+            <!-- blush pink div -->
+            <div class="color-div">
+                <div class="color-swatch swatch-blush">
+                    <span class="hex-badge">#F2D7D5</span>
+                </div>
+                <div class="color-meta">
+                    <div class="color-name">Blush pink</div>
+                    <div class="color-rgb">rgb(242, 215, 213)</div>
+                </div>
+            </div>
+
+            <!-- warm beige div -->
+            <div class="color-div">
+                <div class="color-swatch swatch-beige">
+                    <span class="hex-badge">#E5D9CC</span>
+                </div>
+                <div class="color-meta">
+                    <div class="color-name">Warm beige</div>
+                    <div class="color-rgb">rgb(229, 217, 204)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCENT COLOR (soft black) -->
+        <div class="group-title">◈ accent · definition</div>
+        <div class="swatch-grid" style="justify-content: flex-start;">
+            <!-- black div (soft black) -->
+            <div class="color-div">
+                <div class="color-swatch swatch-black">
+                    <span class="hex-badge black-badge">#2C2C2C</span>
+                </div>
+                <div class="color-meta">
+                    <div class="color-name">Black (soft)</div>
+                    <div class="color-rgb">rgb(44, 44, 44)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- subtle footnote: all colors together -->
+        <hr>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 2rem 0 1rem; justify-content: center; opacity: 0.8;">
+            <span style="background:#F7E7CE; width:2.5rem; height:2rem; border-radius:12px;"></span>
+            <span style="background:#F5F0E6; width:2.5rem; height:2rem; border-radius:12px;"></span>
+            <span style="background:#F2D7D5; width:2.5rem; height:2rem; border-radius:12px;"></span>
+            <span style="background:#E5D9CC; width:2.5rem; height:2rem; border-radius:12px;"></span>
+            <span style="background:#2C2C2C; width:2.5rem; height:2rem; border-radius:12px;"></span>
+        </div>
+        <p style="text-align:center; color:#b9aa9b; font-size:0.8rem; margin-bottom:2rem;">champagne · cream · blush · warm beige · soft black</p>
+    </div>
+</body>
+</html>
