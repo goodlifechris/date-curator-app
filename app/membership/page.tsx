@@ -4,7 +4,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import TopNavBar from "@/components/TopNavBar";
 
 const benefits = [
   "Monthly Romantic Credits – Use your credits to book curated date experiences whenever the moment feels right.",
