@@ -12,7 +12,7 @@ interface Props {
 
 export default function HeroSectionWithVideos({ containerRef }: Props) {
   const [videoIndex, setVideoIndex] = useState(0);
-  const videos = [ "/videos/video2.mp4"];
+  const videos = [ "/videos/video2.mp4", "/videos/video3.mp4", "/videos/video4.mp4"];
 
   const scrollToNext = () => {
     const container = containerRef.current;
