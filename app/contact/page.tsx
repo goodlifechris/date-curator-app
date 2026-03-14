@@ -1,14 +1,11 @@
+// app/contact/page.tsx
 "use client";
 
 import TopNavBar from "@/components/TopNavBar";
-import { useState } from "react";
+import { Phone, Mail, MapPin, Heart } from "lucide-react";
+import Link from "next/link";
 
-
-
-export default function PlanPage() {
-  const [eventType, setEventType] = useState("");
-  const [customEvent, setCustomEvent] = useState("");
-
+export default function ContactPage() {
   return (
     <div
       style={{
@@ -16,9 +13,7 @@ export default function PlanPage() {
         minHeight: "100vh",
       }}
     >
-      
       <div className="max-w-[1200px] mx-auto mt-32 px-6 md:px-16 pt-32 pb-32">
-
         {/* Header */}
         <div className="mb-16 text-center">
           <h1
@@ -30,9 +25,8 @@ export default function PlanPage() {
               lineHeight: 1.1,
             }}
           >
-            Custom <span className="gold-text">Curated Date</span>
+            Get in <span className="gold-text">Touch</span>
           </h1>
-
           <p
             className="mt-4"
             style={{
@@ -43,9 +37,8 @@ export default function PlanPage() {
               fontFamily: "var(--font-montserrat)",
             }}
           >
-            Tell us your dream moment
+            We’d love to hear from you
           </p>
-
           <p
             className="mt-6 max-w-xl mx-auto"
             style={{
@@ -55,118 +48,306 @@ export default function PlanPage() {
               fontSize: "1.1rem",
             }}
           >
-            No two love stories are the same so why should your date be? Our team crafts fully bespoke romantic experiences designed around your love, your partner, and the moment you want to create. Show up, relax, and let us make the night unforgettable.
+            Whether you have a question, a dream date idea, or just want to say
+            hello – our team is here to help.
           </p>
         </div>
 
-        {/* Form */}
-        <form className="grid md:grid-cols-2 gap-10">
-
-          {/* Left Column */}
-          <div className="space-y-6">
-
-            {/* Full Name */}
+        {/* Two-column layout */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Left column: Contact info */}
+          <div className="space-y-8">
             <div>
-              <label className="form-label">Full Name</label>
-              <input
-                type="text"
-                className="form-input"
-                placeholder="John Doe"
-              />
+              <h2
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontSize: "2rem",
+                  fontWeight: 300,
+                  fontStyle: "italic",
+                  color: "var(--gold)",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                Contact Information
+              </h2>
+              <div className="space-y-6">
+                {/* Phone */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="p-3 rounded-full"
+                    style={{
+                      background: "var(--dark-surface)",
+                      border: "1px solid var(--dark-border)",
+                    }}
+                  >
+                    <Phone size={20} style={{ color: "var(--gold)" }} />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--text-muted)",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      PHONE
+                    </p>
+                    <a
+                      href="tel:+254722172759"
+                      style={{
+                        fontFamily: "var(--font-cormorant)",
+                        fontSize: "1.3rem",
+                        color: "var(--cream)",
+                        textDecoration: "none",
+                        transition: "color 0.3s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--gold)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--cream)")
+                      }
+                    >
+                      +254 722 123 456
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="p-3 rounded-full"
+                    style={{
+                      background: "var(--dark-surface)",
+                      border: "1px solid var(--dark-border)",
+                    }}
+                  >
+                    <Mail size={20} style={{ color: "var(--gold)" }} />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--text-muted)",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      EMAIL
+                    </p>
+                    <a
+                      href="mailto:thedatecurator@gmail.com"
+                      style={{
+                        fontFamily: "var(--font-cormorant)",
+                        fontSize: "1.3rem",
+                        color: "var(--cream)",
+                        textDecoration: "none",
+                        transition: "color 0.3s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--gold)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--cream)")
+                      }
+                    >
+                      hello@thedatecurator.ke
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="p-3 rounded-full"
+                    style={{
+                      background: "var(--dark-surface)",
+                      border: "1px solid var(--dark-border)",
+                    }}
+                  >
+                    <MapPin size={20} style={{ color: "var(--gold)" }} />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--text-muted)",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      LOCATION
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-cormorant)",
+                        fontSize: "1.3rem",
+                        color: "var(--cream)",
+                      }}
+                    >
+                      Nairobi, Kenya
+                    </p>
+                  </div>
+                </div>
+
+                {/* Social links */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="p-3 rounded-full"
+                    style={{
+                      background: "var(--dark-surface)",
+                      border: "1px solid var(--dark-border)",
+                    }}
+                  >
+                    <Heart size={20} style={{ color: "var(--gold)" }} />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "0.7rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--text-muted)",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      FOLLOW US
+                    </p>
+                    <div className="flex gap-4">
+
+
+
+
+
+ 
+
+                      <Link
+                        href="https://www.instagram.com/thedatecurator.ke?igsh=b2FncW9uZ2p5aGlz"
+                        target="_blank"
+                        style={{
+                          fontFamily: "var(--font-cormorant)",
+                          fontSize: "1.1rem",
+                          color: "var(--cream)",
+                          textDecoration: "none",
+                          transition: "color 0.3s ease",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.color = "var(--gold)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.color = "var(--cream)")
+                        }
+                      >
+                        Instagram
+                      </Link>
+                      <Link
+                        href="https://www.tiktok.com/@glam_luxe_events?_r=1&_t=ZS-94ggwwrLtoo"
+                        target="_blank"
+                        style={{
+                          fontFamily: "var(--font-cormorant)",
+                          fontSize: "1.1rem",
+                          color: "var(--cream)",
+                          textDecoration: "none",
+                          transition: "color 0.3s ease",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.color = "var(--gold)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.color = "var(--cream)")
+                        }
+                      >
+                        TikTok
+                      </Link>
+                      <Link
+                        href="https://www.facebook.com/share/18DSwbGPhA/?mibextid=wwXIfr"
+                        target="_blank"
+                        style={{
+                          fontFamily: "var(--font-cormorant)",
+                          fontSize: "1.1rem",
+                          color: "var(--cream)",
+                          textDecoration: "none",
+                          transition: "color 0.3s ease",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.color = "var(--gold)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.color = "var(--cream)")
+                        }
+                      >
+                        Facebook
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            {/* Email */}
-            <div>
-              <label className="form-label">Email Address</label>
-              <input
-                type="email"
-                className="form-input"
-                placeholder="you@email.com"
-              />
-            </div>
-
-            {/* Phone */}
-            <div>
-              <label className="form-label">Phone Number</label>
-              <input
-                type="tel"
-                className="form-input"
-                placeholder="+254..."
-              />
-            </div>
-
-            {/* Event Type */}
-            <div>
-              <label className="form-label">What event are you planning?</label>
-   <input
-                type="text"
-                className="form-input"
-                placeholder="Anniversary, Birthday..."
-              />
-
-            </div>
-
-            {/* Custom event */}
-            {eventType === "Other" && (
+          {/* Right column: Contact form */}
+          <div>
+            <h2
+              style={{
+                fontFamily: "var(--font-cormorant)",
+                fontSize: "2rem",
+                fontWeight: 300,
+                fontStyle: "italic",
+                color: "var(--gold)",
+                marginBottom: "1.5rem",
+              }}
+            >
+              Send us a message
+            </h2>
+            <form className="space-y-6">
+              {/* Name */}
               <div>
-                <label className="form-label">Describe your event</label>
+                <label className="form-label">Your Name</label>
                 <input
                   type="text"
                   className="form-input"
-                  placeholder="Romantic rooftop dinner..."
-                  value={customEvent}
-                  onChange={(e) => setCustomEvent(e.target.value)}
+                  placeholder="John Doe"
                 />
               </div>
-            )}
 
-            {/* Location */}
-            <div>
-              <label className="form-label">Preferred Location</label>
-              <input
-                type="text"
-                className="form-input"
-                placeholder="City, venue, or destination"
-              />
-            </div>
+              {/* Email */}
+              <div>
+                <label className="form-label">Email Address</label>
+                <input
+                  type="email"
+                  className="form-input"
+                  placeholder="you@email.com"
+                />
+              </div>
 
-            {/* Budget */}
-            <div>
-              <label className="form-label">Budget Range</label>
-     <input
-                type="text"
-                className="form-input"
-                placeholder="10,000KSH - 250,000KSH"
-              />
-         
-            </div>
+              {/* Message */}
+              <div>
+                <label className="form-label">Message</label>
+                <textarea
+                  rows={5}
+                  className="form-input"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              {/* Submit button */}
+              <button
+                type="submit"
+                className="luxury-btn w-full"
+                style={{ cursor: "pointer" }}
+              >
+                Send Message
+              </button>
+            </form>
           </div>
-
-          {/* Right Column */}
-          <div className="flex flex-col">
-
-            <label className="form-label mb-3">
-              Describe your vision for the date
-            </label>
-
-            <textarea
-              rows={12}
-              className="form-input flex-1"
-              placeholder="Tell us the atmosphere, decorations, surprise elements, music, location, and anything that would make the moment unforgettable..."
-            />
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="mt-8 luxury-btn"
-            >
-              Submit Request
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
 
-      {/* Styling */}
+      {/* Styling (reused from PlanPage) */}
       <style jsx>{`
         .form-label {
           display: block;
@@ -192,7 +373,7 @@ export default function PlanPage() {
 
         .form-input:focus {
           border-color: var(--gold);
-          background: rgba(201,168,76,0.05);
+          background: rgba(201, 168, 76, 0.05);
         }
 
         textarea.form-input {
@@ -212,7 +393,7 @@ export default function PlanPage() {
         }
 
         .luxury-btn:hover {
-          background: rgba(201,168,76,0.08);
+          background: rgba(201, 168, 76, 0.08);
         }
       `}</style>
     </div>

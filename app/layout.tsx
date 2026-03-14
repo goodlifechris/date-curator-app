@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import TopNavBar from "@/components/TopNavBar";
+import FloatingWhatsApp from "@/components/FloatingWhatsapp";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -49,6 +50,8 @@ export default function RootLayout({
       >
         <TopNavBar/>
         {children}
+        <FloatingWhatsApp />
+    
       </body>
     </html>
   );
