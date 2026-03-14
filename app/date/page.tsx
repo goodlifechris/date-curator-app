@@ -10,6 +10,7 @@ import CTASection from "@/components/CTASection";
 import HeroSectionWithVideos from "@/components/HeroSectionWithVideos";
 import TopNavBar from "@/components/TopNavBar";
 import HeroSectionWithVideoAndButtons from "@/components/HeroSectionWithVideoAndButton";
+import HeroSectionWithVideoAndButtonsDate from "@/components/HeroSectionWithVideoAndButtonDate";
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,7 +25,7 @@ export default function HomePage() {
         className=""
       >
 
-        <HeroSectionWithVideoAndButtons containerRef={containerRef} />
+        <HeroSectionWithVideoAndButtonsDate containerRef={containerRef} />
     
       </div>
 

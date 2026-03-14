@@ -4,6 +4,9 @@ import { Heart, ArrowRight, MessageCircle, Gift } from "lucide-react";
 import Link from "next/link";
 
 export default function CTASection() {
+  const whatsappUrl = "https://wa.me/254722172759?text=Hello!%20I'd%20like%20to%20inquire%20about%20your%20dating%20experiences.";
+  const instagramUrl = "https://www.instagram.com/luxury_bloom_kenya?igsh=MTljdm5zMThoa2s3bA==";
+
   return (
     <section
       id="section-3"
@@ -111,9 +114,7 @@ export default function CTASection() {
       </div>
 
       {/* Main content */}
-      <div
-        className="relative z-10 text-center px-8 max-w-2xl mx-auto"
-      >
+      <div className="relative z-10 text-center px-8 max-w-2xl mx-auto">
         {/* Eyebrow */}
         <div
           className="flex items-center justify-center gap-4 mb-8"
@@ -179,29 +180,25 @@ export default function CTASection() {
         {/* Main CTA Button */}
         <div className="mb-8">
           <Link href="/plan" passHref legacyBehavior>
-          <button
-            className="cta-main-btn inline-flex items-center gap-4 px-16 py-5"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light))",
-              color: "var(--obsidian)",
-              fontFamily: "var(--font-cinzel)",
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              letterSpacing: "0.35em",
-              textTransform: "uppercase",
-              border: "none",
-              animation: "glowPulse 3s ease-in-out infinite",
-            }}
-          >
-            <Heart
-              size={16}
-              fill="currentColor"
-              className="relative z-[1]"
-            />
-            <span className="relative z-[1]">Plan Your Date</span>
-            <ArrowRight size={16} className="relative z-[1]" strokeWidth={2} />
-          </button>
+            <button
+              className="cta-main-btn inline-flex items-center gap-4 px-16 py-5"
+              style={{
+                background:
+                  "linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light))",
+                color: "var(--obsidian)",
+                fontFamily: "var(--font-cinzel)",
+                fontSize: "0.75rem",
+                fontWeight: 600,
+                letterSpacing: "0.35em",
+                textTransform: "uppercase",
+                border: "none",
+                animation: "glowPulse 3s ease-in-out infinite",
+              }}
+            >
+              <Heart size={16} fill="currentColor" className="relative z-[1]" />
+              <span className="relative z-[1]">Plan Your Date</span>
+              <ArrowRight size={16} className="relative z-[1]" strokeWidth={2} />
+            </button>
           </Link>
         </div>
 
@@ -216,7 +213,11 @@ export default function CTASection() {
             fontFamily: "var(--font-montserrat)",
           }}
         >
-          <button
+          {/* WhatsApp link */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 transition-colors duration-300 hover:text-gold"
             style={{
               background: "none",
@@ -226,13 +227,11 @@ export default function CTASection() {
               letterSpacing: "inherit",
               fontFamily: "inherit",
               textTransform: "inherit",
+              textDecoration: "none",
+              cursor: "pointer",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--gold)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--text-muted)")
-            }
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
           >
             <MessageCircle size={12} strokeWidth={1.5} />
             <span
@@ -243,11 +242,15 @@ export default function CTASection() {
             >
               Speak with a Curator
             </span>
-          </button>
+          </a>
 
           <span style={{ color: "var(--dark-border)" }}>·</span>
 
-          <button
+          {/* Instagram link */}
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2"
             style={{
               background: "none",
@@ -257,13 +260,11 @@ export default function CTASection() {
               letterSpacing: "inherit",
               fontFamily: "inherit",
               textTransform: "inherit",
+              textDecoration: "none",
+              cursor: "pointer",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--gold)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--text-muted)")
-            }
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
           >
             <Gift size={12} strokeWidth={1.5} />
             <span
@@ -274,7 +275,7 @@ export default function CTASection() {
             >
               Gift an Experience
             </span>
-          </button>
+          </a>
         </div>
 
         {/* Tagline */}

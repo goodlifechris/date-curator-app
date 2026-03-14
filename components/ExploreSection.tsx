@@ -153,7 +153,7 @@ export default function ExploreSection() {
         </div>
 
         {/* Section divider */}
-        <div className="flex items-center gap-6 mb-14">
+        {/* <div className="flex items-center gap-6 mb-14">
           <div style={{ height: 1, flex: 1, background: "var(--dark-border)" }} />
           <span
             style={{
@@ -167,10 +167,10 @@ export default function ExploreSection() {
             Browse by Category
           </span>
           <div style={{ height: 1, flex: 1, background: "var(--dark-border)" }} />
-        </div>
+        </div> */}
 
         {/* Categories sub-heading */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <h3
             style={{
               fontFamily: "var(--font-cormorant)",
@@ -181,10 +181,10 @@ export default function ExploreSection() {
           >
             Find your perfect <span className="gold-text">kind of moment</span>
           </h3>
-        </div>
+        </div> */}
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-24">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-24">
           {categories.map((cat) => (
             <button
               key={cat.key}
@@ -237,7 +237,7 @@ export default function ExploreSection() {
               </p>
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
