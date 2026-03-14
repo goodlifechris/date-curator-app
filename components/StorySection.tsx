@@ -71,7 +71,7 @@ export default function StorySection() {
         <div>
           {/* Eyebrow */}
           <div
-            className="flex items-center gap-4 mb-6"
+            className="flex items-center gap-4 mb-6 pt-5"
             style={{
               fontFamily: "var(--font-cinzel)",
               fontSize: "0.65rem",
