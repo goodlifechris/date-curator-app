@@ -89,7 +89,7 @@ export default function HeroSection({ containerRef }: Props) {
         <div
           style={{
             animation: "scaleIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards, float 6s ease-in-out 1.5s infinite",
-            filter: "drop-shadow(0 0 30px rgba(201,168,76,0.3))",
+            
             marginBottom: "2.5rem",
           }}
         >
