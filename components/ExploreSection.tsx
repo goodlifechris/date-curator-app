@@ -65,7 +65,7 @@ export default function ExploreSection() {
               color: "rgba(248,243,232,0.4)",
             }}
           >
-            "Every detail, perfectly placed"
+            Every detail, perfectly placed
           </p>
         </div>
 
