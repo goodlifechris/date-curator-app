@@ -23,7 +23,7 @@ export default function HomePage() {
       <div
         ref={containerRef}
         id="scroll-container"
-        className="scroll-snap-container"
+        className=""
       >
 
         <HeroSectionWithVideos containerRef={containerRef} />
