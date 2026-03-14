@@ -1,6 +1,7 @@
 "use client";
 
 import { Heart, ArrowRight, MessageCircle, Gift } from "lucide-react";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -177,6 +178,7 @@ export default function CTASection() {
 
         {/* Main CTA Button */}
         <div className="mb-8">
+          <Link href="/plan" passHref legacyBehavior>
           <button
             className="cta-main-btn inline-flex items-center gap-4 px-16 py-5"
             style={{
@@ -200,6 +202,7 @@ export default function CTASection() {
             <span className="relative z-[1]">Plan Your Date</span>
             <ArrowRight size={16} className="relative z-[1]" strokeWidth={2} />
           </button>
+          </Link>
         </div>
 
         {/* Secondary links */}

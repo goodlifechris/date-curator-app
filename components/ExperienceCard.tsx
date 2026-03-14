@@ -81,7 +81,7 @@ export default function ExperienceCard({ exp, delay = 0 }: Props) {
           {exp.description} 
         </h3>
 
-        <p
+        {/* <p
           className="mb-5"
           style={{
             fontSize: "0.72rem",
@@ -91,14 +91,14 @@ export default function ExperienceCard({ exp, delay = 0 }: Props) {
           }}
         >
           {exp.description}
-        </p>
+        </p> */}
 
         {/* Footer */}
         <div
           className="flex items-center justify-between pt-4"
           style={{ borderTop: "1px solid var(--dark-border)" }}
         >
-          <div>
+          {/* <div>
             <span
               style={{
                 fontFamily: "var(--font-montserrat)",
@@ -119,8 +119,8 @@ export default function ExperienceCard({ exp, delay = 0 }: Props) {
             >
               {exp.currency} {exp.price}
             </span>
-          </div>
-
+          </div> */}
+{/* 
           <button
             className="card-arrow-btn flex items-center justify-center transition-all duration-300"
             style={{
@@ -133,7 +133,7 @@ export default function ExperienceCard({ exp, delay = 0 }: Props) {
             aria-label={`View ${exp.title}`}
           >
             <ArrowRight size={14} strokeWidth={1.5} />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -100,18 +100,28 @@ export default function StorySection() {
               fontWeight: 400,
             }}
           >
-           Romance Should Never Feel Ordinary
 
             <br />
-            <span className="gold-text">Deserves a Chapter</span>
+            <span className="gold-text">           Romance Should Never Feel Ordinary
+</span>
             <br />
-In the middle of busy lives, romance often gets forgotten. The Date Curator was created to make meaningful moments easy again.          </h2>
-
+            </h2>
+             <p
+            className="mb-5 leading-loose"
+            style={{
+              fontSize: "1.2rem",
+              fontWeight: 300,
+              color: "rgba(248,243,232,0.65)",
+              lineHeight: 2,
+            }}
+          >
+In the middle of busy lives, romance often gets forgotten. The Date Curator was created to make meaningful moments easy again.         
+</p>
           {/* Body text */}
           <p
             className="mb-5 leading-loose"
             style={{
-              fontSize: "0.82rem",
+              fontSize: "1.2rem",
               fontWeight: 300,
               color: "rgba(248,243,232,0.65)",
               lineHeight: 2,
@@ -123,7 +133,7 @@ In the middle of busy lives, romance often gets forgotten. The Date Curator was 
           <p
             className="mb-8 leading-loose"
             style={{
-              fontSize: "0.82rem",
+              fontSize: "1.2rem",
               fontWeight: 300,
               color: "rgba(248,243,232,0.65)",
               lineHeight: 2,

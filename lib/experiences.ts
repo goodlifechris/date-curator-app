@@ -12,6 +12,45 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+   {
+    id: "5",
+    category: "The Balcony Romance",
+    title: "Petals & Serenity",
+    description:
+      "Transform a balcony into a dreamy romantic dinner setting.",
+       price: "15,000",
+    currency: "KSH",
+    badge: "New",
+    bgGradient: "linear-gradient(135deg, #0d0010, #280030)",
+    emoji: "🌸",
+    categoryKey: "Simple Romantic Experience",
+  },
+  {
+    id: "2",
+    category: "The Love Picnic",
+    title: "Rift Valley Serenade",
+    description:
+      "A beautifully styled outdoor picnic with cozy seating and treats",
+    price: "20,000",
+    currency: "KSH",
+    badge: "Popular",
+    bgGradient: "linear-gradient(135deg, #000a1a, #001a3d)",
+    emoji: "🚁",
+    categoryKey: "Simple Romantic Experience",
+  },
+  {
+    id: "3",
+    category: "The Cozy Cinema Date",
+    title: "Petals & Serenity",
+    description:
+      "A private outdoor movie night with blankets and snacks.",
+       price: "30,000",
+    currency: "KSH",
+    badge: "New",
+    bgGradient: "linear-gradient(135deg, #0d0010, #280030)",
+    emoji: "🌸",
+    categoryKey: "Simple Romantic Experience",
+  },
   {
     id: "1",
     category: "The Golden Hour Date",
@@ -25,52 +64,15 @@ export const experiences: Experience[] = [
     emoji: "🌅",
     categoryKey: "Simple Romantic Experience",
   },
-  {
-    id: "2",
-    category: "The Love Picnic",
-    title: "Rift Valley Serenade",
-    description:
-      "A beautifully styled outdoor picnic with cozy seating and treats",
-    price: "120,000",
-    currency: "KSH",
-    badge: "Popular",
-    bgGradient: "linear-gradient(135deg, #000a1a, #001a3d)",
-    emoji: "🚁",
-    categoryKey: "Simple Romantic Experience",
-  },
-  {
-    id: "3",
-    category: "The Cozy Cinema Date",
-    title: "Petals & Serenity",
-    description:
-      "A private outdoor movie night with blankets and snacks.",
-       price: "38,000",
-    currency: "KSH",
-    badge: "New",
-    bgGradient: "linear-gradient(135deg, #0d0010, #280030)",
-    emoji: "🌸",
-    categoryKey: "Simple Romantic Experience",
-  },
+
+  
     {
     id: "4",
     category: "The Sweetheart Dinner",
     title: "Petals & Serenity",
     description:
       "A romantic candlelight dinner setup in a private space.",
-       price: "38,000",
-    currency: "KSH",
-    badge: "New",
-    bgGradient: "linear-gradient(135deg, #0d0010, #280030)",
-    emoji: "🌸",
-    categoryKey: "Simple Romantic Experience",
-  },
- {
-    id: "5",
-    category: "The Balcony Romance",
-    title: "Petals & Serenity",
-    description:
-      "Transform a balcony into a dreamy romantic dinner setting.",
-       price: "38,000",
+       price: "45,000",
     currency: "KSH",
     badge: "New",
     bgGradient: "linear-gradient(135deg, #0d0010, #280030)",

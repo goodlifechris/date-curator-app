@@ -18,9 +18,10 @@ export const TopNavBar: React.FC<TopNavBarProps> = ({
     { label: "Home", href: "/" },
     { label: "Experiences", href: "#section-2" },
     { label: "Curate My Date", href: "/plan" },
-    { label: "Membership", href: "#membership" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Contact", href: "#contact" },
+    { label: "Concierge", href: "/membership" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Contact", href: "/contact" },
   ],
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

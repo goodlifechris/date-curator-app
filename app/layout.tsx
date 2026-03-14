@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
+import TopNavBar from "@/components/TopNavBar";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${cinzel.variable} ${montserrat.variable} bg-obsidian text-cream antialiased`}
       >
+        <TopNavBar/>
         {children}
       </body>
     </html>

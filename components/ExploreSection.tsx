@@ -5,7 +5,7 @@ import ExperienceCard from "./ExperienceCard";
 import { experiences, categories } from "@/lib/experiences";
 
 const ALL_TAB = "All";
-const TAB_KEYS = [ALL_TAB, "Simple Romantic Experience", "Signature Experiences","Premium Experiences"];
+const TAB_KEYS = ["Simple Romantic Experience", "Signature Experiences", "Premium Experiences"];
 
 export default function ExploreSection() {
   const [activeTab, setActiveTab] = useState(ALL_TAB);
@@ -29,7 +29,6 @@ export default function ExploreSection() {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 pt-20 pb-12">
-
         {/* Header */}
         <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
           <div>
@@ -42,7 +41,7 @@ export default function ExploreSection() {
                 lineHeight: 1.1,
               }}
             >
-              Our <span className="gold-text">Expeiences</span>
+              Our <span className="gold-text">Experiences</span>
             </h2>
             <p
               className="mt-2"
@@ -69,21 +68,68 @@ export default function ExploreSection() {
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        {/* Video Section */}
+        <div className="relative w-full mb-14 overflow-hidden rounded-lg" 
+          style={{
+            aspectRatio: "16/9",
+            border: "1px solid var(--dark-border)",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
+          }}
+        >
+          <video 
+            className="w-full h-full object-cover"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster="/path-to-video-poster.jpg" // Add your poster image path
+          >
+            <source src="/videos/video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Optional overlay text */}
+          <div 
+            className="absolute inset-0 flex items-center justify-center"
+            style={{
+              background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6))"
+            }}
+          >
+            <p 
+              className="text-center px-6"
+              style={{
+                fontFamily: "var(--font-cormorant)",
+                fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                fontStyle: "italic",
+                color: "var(--cream)",
+                textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+                marginTop: "auto",
+                paddingBottom: "2rem"
+              }}
+            >
+              Watch the magic unfold
+            </p>
+          </div>
+        </div>
+
+        {/* Category Tabs with equal width */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           {TAB_KEYS.map((tab) => (
             <button
               key={tab}
               onClick={() => { setActiveTab(tab); setActiveCat(null); }}
-              className="cat-tab px-5 py-2 transition-all duration-300"
+              className="cat-tab px-4 py-3 transition-all duration-300 w-full text-center"
               style={{
                 fontFamily: "var(--font-cinzel)",
-                fontSize: "0.6rem",
+                fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 border: `1px solid ${activeTab === tab ? "var(--gold)" : "var(--dark-border)"}`,
                 background: activeTab === tab ? "rgba(201,168,76,0.06)" : "transparent",
                 color: activeTab === tab ? "var(--gold)" : "var(--text-muted)",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
               {tab}

@@ -16,7 +16,7 @@ export default function PlanPage() {
         minHeight: "100vh",
       }}
     >
-
+        <TopNavBar/>
       <div className="max-w-[1200px] mx-auto mt-32 px-6 md:px-16 pt-32 pb-32">
 
         {/* Header */}
