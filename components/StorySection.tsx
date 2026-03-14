@@ -1,0 +1,185 @@
+"use client";
+
+export default function StorySection() {
+  return (
+    <section
+      id="section-1"
+      className="scroll-snap-section flex items-center justify-center"
+      style={{ background: "#111111" }}
+    >
+      {/* Radial background glow */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.05) 0%, transparent 60%)",
+        }}
+      />
+
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+        
+        {/* Left — Visual rings */}
+        <div className="hidden md:flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
+            {/* Outer ring */}
+            <div
+              className="story-ring absolute"
+              style={{
+                width: 320,
+                height: 320,
+                border: "1px solid rgba(201,168,76,0.15)",
+                borderRadius: "50%",
+                animation: "rotateSlow 30s linear infinite",
+              }}
+            />
+            {/* Middle ring */}
+            <div
+              className="absolute"
+              style={{
+                width: 260,
+                height: 260,
+                border: "1px solid rgba(201,168,76,0.1)",
+                borderRadius: "50%",
+                animation: "rotateSlow 20s linear infinite reverse",
+              }}
+            />
+            {/* Center circle */}
+            <div
+              className="relative flex items-center justify-center"
+              style={{
+                width: 180,
+                height: 180,
+                background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%)",
+                border: "1px solid rgba(201,168,76,0.2)",
+                borderRadius: "50%",
+                animation: "glowPulse 4s ease-in-out infinite",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "3.5rem",
+                  animation: "heartbeat 3s ease-in-out infinite",
+                }}
+              >
+                ♥
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right — Text */}
+        <div>
+          {/* Eyebrow */}
+          <div
+            className="flex items-center gap-4 mb-6"
+            style={{
+              fontFamily: "var(--font-cinzel)",
+              fontSize: "0.65rem",
+              letterSpacing: "0.4em",
+              color: "var(--gold)",
+              textTransform: "uppercase",
+            }}
+          >
+            <span>Our Philosophy</span>
+            <div
+              style={{
+                height: 1,
+                flex: 1,
+                maxWidth: 60,
+                background: "linear-gradient(90deg, var(--gold), transparent)",
+              }}
+            />
+          </div>
+
+          {/* Heading */}
+          <h2
+            className="mb-6 leading-[1.2]"
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
+              fontWeight: 400,
+            }}
+          >
+            Every Love Story
+            <br />
+            <span className="gold-text">Deserves a Chapter</span>
+            <br />
+            Worth Remembering
+          </h2>
+
+          {/* Body text */}
+          <p
+            className="mb-5 leading-loose"
+            style={{
+              fontSize: "0.82rem",
+              fontWeight: 300,
+              color: "rgba(248,243,232,0.65)",
+              lineHeight: 2,
+            }}
+          >
+            We believe that the most profound moments in life deserve to be
+            experienced with intention, elegance, and deep personal meaning. The
+            Date Curator transforms ordinary evenings into extraordinary
+            memories — bespoke date experiences designed exclusively for
+            discerning couples in Nairobi and beyond.
+          </p>
+
+          <p
+            className="mb-8 leading-loose"
+            style={{
+              fontSize: "0.82rem",
+              fontWeight: 300,
+              color: "rgba(248,243,232,0.65)",
+              lineHeight: 2,
+            }}
+          >
+            Each experience is handcrafted by our team of romance curators,
+            drawing from the finest venues, exquisite cuisine, and intimate
+            details that speak directly to your unique love story.
+          </p>
+
+          {/* Stats */}
+          <div
+            className="flex gap-10 pt-6"
+            style={{
+              borderTop: "1px solid rgba(201,168,76,0.15)",
+            }}
+          >
+            {[
+              { num: "200+", label: "Experiences" },
+              { num: "98%",  label: "Satisfaction" },
+              { num: "5★",   label: "Rated" },
+            ].map(({ num, label }) => (
+              <div key={label} className="text-center">
+                <span
+                  className="block gold-text"
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    fontSize: "2.2rem",
+                    fontWeight: 300,
+                  }}
+                >
+                  {num}
+                </span>
+                <span
+                  className="block mt-1"
+                  style={{
+                    fontFamily: "var(--font-montserrat)",
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.25em",
+                    textTransform: "uppercase",
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <span className="section-num">02 / 04</span>
+    </section>
+  );
+}

@@ -1,0 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-pale: #F5E6B8;
+  --gold-dark: #8B6914;
+  --obsidian: #0A0A0A;
+  --charcoal: #111111;
+  --dark-surface: #161616;
+  --dark-card: #1C1C1C;
+  --dark-border: #2A2A2A;
+  --cream: #F8F3E8;
+  --text-muted: #888888;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide default cursor everywhere */
+*, *:hover {
+  cursor: none !important;
+}
+
+/* ─── Scroll Container ──────────────────────────────────────────── */
+.scroll-snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Gold Shimmer Text ─────────────────────────────────────────── */
+.gold-text {
+  background: linear-gradient(
+    135deg,
+    #C9A84C 0%,
+    #F5E6B8 35%,
+    #E8C96A 50%,
+    #F5E6B8 65%,
+    #C9A84C 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Custom Cursor ─────────────────────────────────────────────── */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  will-change: left, top;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  will-change: left, top;
+}
+
+.cursor.cursor-hover {
+  width: 20px;
+  height: 20px;
+  background: var(--gold-light);
+}
+
+.cursor-ring.cursor-hover {
+  width: 54px;
+  height: 54px;
+}
+
+/* ─── Noise Grain Texture ───────────────────────────────────────── */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Decorative Gold Lines ─────────────────────────────────────── */
+.deco-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ─── Orb Backgrounds ───────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Card Hover Effects ────────────────────────────────────────── */
+.experience-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.5s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(201, 168, 76, 0.08);
+}
+
+.experience-card:hover .card-image-inner {
+  transform: scale(1.08);
+}
+
+.card-image-inner {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover .card-arrow-btn {
+  background: var(--gold);
+  color: var(--obsidian);
+  border-color: var(--gold);
+}
+
+/* ─── Category Card Hover ───────────────────────────────────────── */
+.category-card {
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.category-card:hover .cat-icon-ring {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.cat-icon-ring {
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+/* ─── CTA Button ────────────────────────────────────────────────── */
+.cta-main-btn {
+  position: relative;
+  overflow: hidden;
+  transition: letter-spacing 0.4s ease, transform 0.3s ease;
+}
+
+.cta-main-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cta-main-btn:hover::before {
+  opacity: 1;
+}
+
+.cta-main-btn:hover {
+  letter-spacing: 0.4em;
+  transform: scale(1.02);
+}
+
+/* ─── Hero CTA Button ───────────────────────────────────────────── */
+.hero-outline-btn {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, letter-spacing 0.3s ease;
+}
+
+.hero-outline-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-outline-btn:hover::before {
+  transform: translateX(0);
+}
+
+.hero-outline-btn:hover {
+  color: var(--obsidian);
+  letter-spacing: 0.35em;
+}
+
+/* ─── Nav Item Active Line ──────────────────────────────────────── */
+.nav-item-link {
+  position: relative;
+}
+
+.nav-item-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-item-link:hover::after,
+.nav-item-link.active::after {
+  width: 20px;
+}
+
+/* ─── Story Ring ────────────────────────────────────────────────── */
+.story-ring::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* ─── Section Number ────────────────────────────────────────────── */
+.section-num {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  z-index: 10;
+}
+
+/* ─── Scroll Bar Hide ───────────────────────────────────────────── */
+.scroll-snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-snap-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Progress Dots ─────────────────────────────────────────────── */
+.progress-dot {
+  transition: all 0.4s ease;
+}
+
+.progress-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.5);
+  transform: scale(1.4);
+}
+
+/* ─── Animations (additional) ───────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); }
+  50%       { box-shadow: 0 0 40px rgba(201,168,76,0.25), 0 0 80px rgba(201,168,76,0.08); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.3); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.2); }
+  70%       { transform: scale(1); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); opacity: 0.6; }
+  50%       { transform: translateY(8px) translateX(-50%); opacity: 1; }
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(30px, -20px); }
+  66%       { transform: translate(-20px, 15px); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(-25px, 20px); }
+  66%       { transform: translate(15px, -25px); }
+}
+
+@keyframes goldPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
