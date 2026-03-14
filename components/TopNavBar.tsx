@@ -16,9 +16,9 @@ export const TopNavBar: React.FC<TopNavBarProps> = ({
   logoImage = "/logo.png",
   links = [
     { label: "Home", href: "/" },
-    { label: "Experiences", href: "#section-2" },
+    { label: "Experiences", href: "/experience" },
     { label: "Curate My Date", href: "/plan" },
-    { label: "Concierge", href: "/membership" },
+    { label: "Romance Club", href: "/membership" },
     { label: "Gallery", href: "/gallery" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },

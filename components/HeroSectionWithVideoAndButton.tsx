@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { RefObject, useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Heart, Sparkles, Star } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -10,9 +9,9 @@ interface Props {
   containerRef: RefObject<HTMLDivElement>;
 }
 
-export default function HeroSectionWithVideos({ containerRef }: Props) {
+export default function HeroSectionWithVideoAndButtons({ containerRef }: Props) {
   const [videoIndex, setVideoIndex] = useState(0);
-  const videos = [ "/videos/video2.mp4"];
+  const videos = ["/videos/video2.mp4"];
 
   const scrollToNext = () => {
     const container = containerRef.current;
@@ -20,11 +19,11 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
       container.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     }
   };
-const router = useRouter();
 
-  const scrollToExplore = () => {
-  router.push("/plan");
+  const router = useRouter();
 
+  const goToPlan = () => {
+    router.push("/plan");
   };
 
   // Switch videos every 12 seconds
@@ -39,7 +38,7 @@ const router = useRouter();
     <>
       <section
         id="section-0"
-        className="scroll-snap-section flex items-center justify-center relative overflow-hidden"
+        className="scroll-snap-section flex items-center justify-center relative overflow-hidden mt-32"
         style={{
           minHeight: "100vh",
           position: "relative",
@@ -65,7 +64,7 @@ const router = useRouter();
           ))}
         </div>
 
-        {/* Dark Overlay for Text Readability */}
+        {/* Dark Overlay */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -75,7 +74,7 @@ const router = useRouter();
           }}
         />
 
-        {/* Additional gradient overlay for depth */}
+        {/* Gradient overlay */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -88,7 +87,7 @@ const router = useRouter();
         {/* Grain texture */}
         <div className="grain-overlay absolute inset-0" style={{ pointerEvents: "none" }} />
 
-        {/* Floating orbs (optional - adjust opacity for video) */}
+        {/* Floating orbs */}
         <div
           className="orb absolute"
           style={{
@@ -140,14 +139,12 @@ const router = useRouter();
 
         {/* Main content */}
         <div
-          className="relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-12 w-full max-w-5xl"
+          className="relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-12 w-full max-w-6xl"
           style={{ animation: "fadeIn 1.5s ease forwards" }}
         >
-    
-
           {/* Headline */}
           <h1
-            className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 leading-tight sm:leading-tight md:leading-[1.1] lg:leading-[1.05]"
+            className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 leading-tight"
             style={{
               fontFamily: "var(--font-cormorant)",
               fontWeight: 300,
@@ -158,18 +155,16 @@ const router = useRouter();
               fontSize: "clamp(1.75rem, 5vw, 5rem)",
             }}
           >
-            <span className="gold-text" style={{ textShadow: "0 2px 8px rgba(201,168,76,0.3)" }}>
-              Imagine arriving at a perfectly curated date designed just for you.
-            </span>
+          
             <br />
             <span style={{ color: "var(--cream)", fontWeight: 300 }}>
               We handle every detail so you can focus on the moment and the person beside you.
             </span>
           </h1>
 
-          {/* Sub */}
+          {/* Social links */}
           <p
-            className="text-[0.6rem] sm:text-xs md:text-sm tracking-wider sm:tracking-widest uppercase mb-6 sm:mb-8 md:mb-12"
+            className="text-[0.6rem] sm:text-xs md:text-sm tracking-widest uppercase mb-6 sm:mb-8 md:mb-12"
             style={{
               fontFamily: "var(--font-montserrat)",
               fontWeight: 300,
@@ -190,7 +185,7 @@ const router = useRouter();
             &nbsp;·&nbsp;
             <Link href="https://www.facebook.com/share/18DSwbGPhA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
               Facebook
-            </Link> 
+            </Link>
           </p>
 
           {/* Divider with heart */}
@@ -223,33 +218,103 @@ const router = useRouter();
             />
           </div>
 
-          {/* CTA Button */}
-          <div style={{ opacity: 0, animation: "fadeUp 1s ease 1.6s forwards" }}>
-            <button
-              onClick={scrollToExplore}
-              className="hero-outline-btn inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 hover:bg-gold/5 transition-all duration-300"
+          {/* Main CTA Button */}
+        
+
+          {/* HOW IT WORKS Section */}
+          <div
+            className="mt-16 sm:mt-20 md:mt-24"
+            style={{ opacity: 0, animation: "fadeUp 1s ease 1.8s forwards" }}
+          >
+            <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-8 sm:mb-10"
               style={{
-                border: "1px solid var(--gold)",
+                fontFamily: "var(--font-cormorant)",
+                fontWeight: 300,
+                fontStyle: "italic",
                 color: "var(--gold)",
-                fontFamily: "var(--font-cinzel)",
-                fontSize: "clamp(0.6rem, 2vw, 0.75rem)",
-                fontWeight: 400,
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                background: "transparent",
-                backdropFilter: "blur(10px)",
-                boxShadow: "0 8px 32px rgba(201,168,76,0.1)",
+                letterSpacing: "0.05em",
               }}
             >
-              <span className="relative z-[1]">Plan My Date</span>
-              <span className="relative z-[1]">→</span>
-            </button>
+              How It Works
+            </h2>
+
+            {/* Steps Grid with Elegant Icons */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto mb-10 sm:mb-12">
+              {[
+                { icon: Heart, title: "Choose Your Experience", desc: "Browse our curated date ideas." },
+                { icon: Sparkles, title: "We Plan Everything", desc: "We handle the concept, setup, and coordination." },
+                { icon: Star, title: "You Show Up & Enjoy", desc: "Create a memory you'll never forget." },
+              ].map((step, i) => (
+                <div key={i} className="text-center">
+                  <div
+                    className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-3"
+                    style={{
+                      border: "1px solid var(--gold)",
+                      background: "rgba(201,168,76,0.05)",
+                      backdropFilter: "blur(10px)",
+                      boxShadow: "0 8px 24px rgba(201,168,76,0.15)",
+                    }}
+                  >
+                    <step.icon size={28} className="sm:w-8 sm:h-8" style={{ color: "var(--gold)" }} />
+                  </div>
+                  <h3
+                    className="text-base sm:text-lg md:text-xl font-medium mb-2"
+                    style={{
+                      fontFamily: "var(--font-cormorant)",
+                      color: "var(--cream)",
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="text-xs sm:text-sm"
+                    style={{
+                      fontFamily: "var(--font-montserrat)",
+                      color: "var(--text-muted)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Three CTA Buttons – matching main button style */}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              {[
+                { label: "Romance Club", onClick: () => router.push("/membership") },
+                { label: "Experience", onClick: () => router.push("/experience") },
+                { label: "Curate My Date", onClick: () => router.push("/plan") },
+              ].map((btn, i) => (
+                <button
+                  key={i}
+                  onClick={btn.onClick}
+                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm transition-all duration-300 hover:bg-gold/5"
+                  style={{
+                    border: "1px solid var(--gold)",
+                    color: "var(--gold)",
+                    fontFamily: "var(--font-cinzel)",
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    background: "transparent",
+                    backdropFilter: "blur(10px)",
+                    borderRadius: "9999px",
+                    boxShadow: "0 4px 16px rgba(201,168,76,0.1)",
+                  }}
+                >
+                  {btn.label}
+                  <span>→</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Video indicator dots */}
           <div
             className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 sm:mt-12 md:mt-16"
-            style={{ opacity: 0, animation: "fadeUp 1s ease 1.8s forwards" }}
+            style={{ opacity: 0, animation: "fadeUp 1s ease 2s forwards" }}
           >
             {videos.map((_, index) => (
               <button
