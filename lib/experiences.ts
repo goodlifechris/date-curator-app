@@ -14,8 +14,8 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "1",
-    category: "Sunset Dining",
-    title: "Nairobi Skyline Affair",
+    category: "Marriage Proposal",
+    title: "Nairobi Skyline Affair ",
     description:
       "A private rooftop table above the Nairobi skyline as dusk paints the city gold. Champagne on arrival, a 5-course chef's menu, and a jazz duo playing softly in the distance.",
     price: "45,000",
@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "2",
-    category: "Adventure Romance",
+    category: "Movie Date",
     title: "Rift Valley Serenade",
     description:
       "A scenic helicopter flight over the Great Rift Valley culminating in a candlelit bush picnic on the lakeside with curated wine pairings and personalised décor.",
@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "3",
-    category: "Spa & Wellness",
+    category: "Nature Walk Date",
     title: "Petals & Serenity",
     description:
       "A full day wellness journey for two — rose petal baths, couples deep-tissue massage, private sauna, and a floral-arranged light dinner in your suite.",
@@ -65,7 +65,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "5",
-    category: "Safari Romance",
+    category: "Safari Romance date",
     title: "Maasai Mara Starfall",
     description:
       "A private twilight game drive followed by a boma dinner under the open sky with local Maasai performers. Fall asleep to the sounds of the wild in your luxury tented camp.",
@@ -91,7 +91,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "7",
-    category: "Rooftop Experience",
+    category: "Shooting Range",
     title: "Midnight Garden",
     description:
       "An enchanted rooftop transformed with thousands of fairy lights, live florals, and a private chef preparing a three-course meal under the stars. Serenade included.",
