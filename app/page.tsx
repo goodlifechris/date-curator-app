@@ -18,11 +18,8 @@ export default function HomePage() {
     <>
       <CustomCursor />
       <ProgressDots containerRef={containerRef} />
-
-
-
-
       <TopNavBar />
+
       <div
         ref={containerRef}
         id="scroll-container"

@@ -5,7 +5,7 @@ import ExperienceCard from "./ExperienceCard";
 import { experiences, categories } from "@/lib/experiences";
 
 const ALL_TAB = "All";
-const TAB_KEYS = [ALL_TAB, "Dining", "Sunset", "Adventure", "Spa & Wellness", "Rooftop", "Cultural", "Nature & Safari"];
+const TAB_KEYS = [ALL_TAB, "Simple Romantic Experience", "Signature Experience","Premium Experience"];
 
 export default function ExploreSection() {
   const [activeTab, setActiveTab] = useState(ALL_TAB);
@@ -42,7 +42,7 @@ export default function ExploreSection() {
                 lineHeight: 1.1,
               }}
             >
-              Past <span className="gold-text">Experiences</span>
+              Our <span className="gold-text">Expeiences</span>
             </h2>
             <p
               className="mt-2"

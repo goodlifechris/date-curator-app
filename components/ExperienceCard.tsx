@@ -78,7 +78,7 @@ export default function ExperienceCard({ exp, delay = 0 }: Props) {
             fontWeight: 500,
           }}
         >
-          {exp.title}
+          {exp.description} 
         </h3>
 
         <p

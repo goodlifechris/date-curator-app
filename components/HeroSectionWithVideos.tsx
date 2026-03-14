@@ -173,12 +173,12 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
           }}
         >
           <span className="gold-text" style={{ textShadow: "0 2px 8px rgba(201,168,76,0.3)" }}>
-We design and deliver beautifully curated date experiences so you can simply show up 
+Imagine arriving at a perfectly curated date designed just for you. 
+
           </span>
           <br />
           <span style={{ color: "var(--cream)", fontWeight: 300 }}>
-         Fall in love with the moment
-          </span>
+We handle every detail so you can focus on the moment and the person beside you.          </span>
         </h1>
 
         {/* Sub */}
