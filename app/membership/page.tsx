@@ -49,7 +49,7 @@ const plans = [
   },
 ];
 
-export const MembershipSection = () => {
+export default function MembershipSection() {
   return (
     <section
       style={{
@@ -377,4 +377,3 @@ Join The Date Concierge
   );
 };
 
-export default MembershipSection;
