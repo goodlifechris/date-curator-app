@@ -52,7 +52,7 @@ export const experiences: Experience[] = [
     categoryKey: "Simple Romantic Experience",
   },
     {
-    id: "3",
+    id: "4",
     category: "The Sweetheart Dinner",
     title: "Petals & Serenity",
     description:
@@ -65,7 +65,7 @@ export const experiences: Experience[] = [
     categoryKey: "Simple Romantic Experience",
   },
  {
-    id: "3",
+    id: "5",
     category: "The Balcony Romance",
     title: "Petals & Serenity",
     description:
@@ -82,45 +82,148 @@ export const experiences: Experience[] = [
 
 
   {
-    id: "4",
-    category: "Fine Dining",
-    title: "The Golden Table",
-    description:
-      "An exclusive 7-course tasting menu in a private candlelit dining room at Nairobi's most celebrated fine dining establishment, with a dedicated sommelier.",
+    id: "6",
+    category: "The Rooftop Romance",
+    title: "The Rooftop Romance",
+    description:"A stunning dinner setup overlooking the city skyline.",
     price: "65,000",
     currency: "KSH",
     bgGradient: "linear-gradient(135deg, #0a0800, #2a2000)",
     emoji: "🕯️",
-    categoryKey: "Signature Experience",
+    categoryKey: "Signature Experiences",
   },
   {
-    id: "5",
-    category: "Safari Romance date",
-    title: "Maasai Mara Starfall",
+    id: "7",
+    category: "The Garden of Love",
+    title: "The Garden of Love",
     description:
-      "A private twilight game drive followed by a boma dinner under the open sky with local Maasai performers. Fall asleep to the sounds of the wild in your luxury tented camp.",
+"A romantic dinner surrounded by flowers and nature.",
     price: "280,000",
     currency: "KSH",
     badge: "Exclusive",
     bgGradient: "linear-gradient(135deg, #001a0a, #003d1a)",
     emoji: "🦁",
-    categoryKey: "Signature Experience",
+    categoryKey: "Signature Experiences",
   },
   {
-    id: "6",
-    category: "Arts & Culture",
-    title: "An Evening in Art",
+    id: "8",
+    category: "The Champagne Date",
+    title: "The Champagne Date",
     description:
-      "A private after-hours gallery tour curated just for the two of you, followed by an art class with a local master artist, then cocktails among the canvases.",
+"A luxury romantic experience with champagne and elegant décor.",
+    price: "280,000",
+    currency: "KSH",
+    badge: "Exclusive",
+    bgGradient: "linear-gradient(135deg, #001a0a, #003d1a)",
+    emoji: "🦁",
+    categoryKey: "Signature Experiences",
+  },
+   {
+    id: "9",
+    category: "The Moonlight Dinner",
+    title: "The Moonlight Dinner",
+    description:
+"An intimate candlelit dinner under the stars.",
+    price: "280,000",
+    currency: "KSH",
+    badge: "Exclusive",
+    bgGradient: "linear-gradient(135deg, #001a0a, #003d1a)",
+    emoji: "🦁",
+    categoryKey: "Signature Experiences",
+  },
+     {
+    id: "10",
+    category: "The Enchanted Evening",
+    title: "The Enchanted Evening",
+    description:
+"A magical date experience designed to surprise and delight.",
+    price: "280,000",
+    currency: "KSH",
+    badge: "Exclusive",
+    bgGradient: "linear-gradient(135deg, #001a0a, #003d1a)",
+    emoji: "🦁",
+    categoryKey: "Signature Experiences",
+  },
+  
+
+
+
+  {
+    id: "11",
+    category: "The Dream Date",
+    title: "The Dream Date",
+    description:
+    "A luxury curated romantic experience designed entirely around the couple.",
     price: "28,000",
     currency: "KSH",
     badge: "Cultural",
     bgGradient: "linear-gradient(135deg, #1a0505, #3d1010)",
     emoji: "🎭",
-    categoryKey: "Cultural",
+    categoryKey: "Premium Experiences",
   },
+
+
+  
   {
-    id: "7",
+    id: "12",
+    category: "The Ultimate Date Night",
+    title: "The Ultimate Date Night",
+    description:
+    "A high-end romantic experience with luxury décor and ambiance.",
+    price: "28,000",
+    currency: "KSH",
+    badge: "Cultural",
+    bgGradient: "linear-gradient(135deg, #1a0505, #3d1010)",
+    emoji: "🎭",
+    categoryKey: "Premium Experiences",
+  },
+
+  
+  {
+    id: "13",
+    category: "The Luxury Staycation Date",
+    title: "The Luxury Staycation Date",
+    description:
+    "A decorated hotel room with candles, roses, and surprises.",
+    price: "28,000",
+    currency: "KSH",
+    badge: "Cultural",
+    bgGradient: "linear-gradient(135deg, #1a0505, #3d1010)",
+    emoji: "🎭",
+    categoryKey: "Premium Experiences",
+  },
+
+
+  {
+    id: "14",
+    category: "The Romantic Escape",
+    title: "The Romantic Escape",
+    description:
+    "A curated romantic experience in a unique destination.",
+    price: "28,000",
+    currency: "KSH",
+    badge: "Cultural",
+    bgGradient: "linear-gradient(135deg, #1a0505, #3d1010)",
+    emoji: "🎭",
+    categoryKey: "Premium Experiences",
+  },
+
+  {
+    id: "15",
+    category: "The Weekend Romance Experience",
+    title: "The Weekend Romance Experience",
+    description:
+    "A full-day curated romantic journey.",
+    price: "28,000",
+    currency: "KSH",
+    badge: "Cultural",
+    bgGradient: "linear-gradient(135deg, #1a0505, #3d1010)",
+    emoji: "🎭",
+    categoryKey: "Premium Experiences",
+  },
+
+  {
+    id: "16",
     category: "Shooting Range",
     title: "Midnight Garden",
     description:
@@ -133,7 +236,7 @@ export const experiences: Experience[] = [
     categoryKey: "Premium Experience",
   },
   {
-    id: "8",
+    id: "17",
     category: "Sunset Dining",
     title: "Ngong Hills Twilight",
     description:

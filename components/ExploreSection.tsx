@@ -5,7 +5,7 @@ import ExperienceCard from "./ExperienceCard";
 import { experiences, categories } from "@/lib/experiences";
 
 const ALL_TAB = "All";
-const TAB_KEYS = [ALL_TAB, "Simple Romantic Experience", "Signature Experience","Premium Experience"];
+const TAB_KEYS = [ALL_TAB, "Simple Romantic Experience", "Signature Experiences","Premium Experiences"];
 
 export default function ExploreSection() {
   const [activeTab, setActiveTab] = useState(ALL_TAB);
