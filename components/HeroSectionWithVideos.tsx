@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { RefObject, useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { TopNavBar } from "./TopNavBar";
 
 interface Props {
   containerRef: RefObject<HTMLDivElement>;
@@ -33,6 +34,9 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
   }, []);
 
   return (
+    <>
+
+
     <section
       id="section-0"
       className="scroll-snap-section flex items-center justify-center relative overflow-hidden"
@@ -139,23 +143,7 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
         className="relative z-10 text-center px-8"
         style={{ animation: "fadeIn 1.5s ease forwards" }}
       >
-        {/* Logo */}
-        <div
-          style={{
-            animation:
-              "scaleIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards, float 6s ease-in-out 1.5s infinite",
-            marginBottom: "2.5rem",
-          }}
-        >
-          <Image
-            src="/logo.png"
-            alt="The Date Curator — By Luxury Proposal"
-            width={280}
-            height={200}
-            priority
-            className="mx-auto w-[220px] md:w-[280px] h-auto drop-shadow-lg"
-          />
-        </div>
+
 
         {/* Tagline */}
         <p
@@ -169,7 +157,7 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
             textShadow: "0 2px 8px rgba(0,0,0,0.5)",
           }}
         >
-          Curating Extraordinary Love Moments
+         Curated Moments. Unforgettable Dates.
         </p>
 
         {/* Headline */}
@@ -185,11 +173,11 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
           }}
         >
           <span className="gold-text" style={{ textShadow: "0 2px 8px rgba(201,168,76,0.3)" }}>
-            Love, Crafted
+We design and deliver beautifully curated date experiences so you can simply show up 
           </span>
           <br />
           <span style={{ color: "var(--cream)", fontWeight: 300 }}>
-            to Perfection
+         Fall in love with the moment
           </span>
         </h1>
 
@@ -252,7 +240,7 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
               boxShadow: "0 8px 32px rgba(201,168,76,0.1)",
             }}
           >
-            <span className="relative z-[1]">Explore Experiences</span>
+            <span className="relative z-[1]">Plan My Date</span>
             <span className="relative z-[1]">→</span>
           </button>
         </div>
@@ -311,5 +299,6 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
 
       <span className="section-num relative z-20">01 / 04</span>
     </section>
+</>
   );
 }

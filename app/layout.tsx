@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   keywords: ["luxury dates", "romantic experiences", "Nairobi", "date planning", "luxury proposal"],
   openGraph: {
     title: "The Date Curator",
-    description: "Love, crafted to perfection.",
+    description: "Curated Moments. Unforgettable Dates. Crafted for You.",
     type: "website",
   },
 };

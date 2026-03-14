@@ -9,6 +9,7 @@ import StorySection from "@/components/StorySection";
 import ExploreSection from "@/components/ExploreSection";
 import CTASection from "@/components/CTASection";
 import HeroSectionWithVideos from "@/components/HeroSectionWithVideos";
+import TopNavBar from "@/components/TopNavBar";
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,10 @@ export default function HomePage() {
       <CustomCursor />
       <ProgressDots containerRef={containerRef} />
 
+
+
+
+      <TopNavBar />
       <div
         ref={containerRef}
         id="scroll-container"
@@ -26,7 +31,7 @@ export default function HomePage() {
 
         <HeroSectionWithVideos containerRef={containerRef} />
         {/* Section 1 — Hero */}
-        <HeroSection containerRef={containerRef} />
+        {/* <HeroSection containerRef={containerRef} /> */}
 
         {/* Section 2 — Story / About */}
         <StorySection />

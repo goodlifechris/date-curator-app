@@ -98,24 +98,7 @@ export default function HeroSection({ containerRef }: Props) {
         className="relative z-10 text-center px-8"
         style={{ animation: "fadeIn 1.5s ease forwards" }}
       >
-        {/* Logo */}
-        <div
-          style={{
-            animation:
-              "scaleIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards, float 6s ease-in-out 1.5s infinite",
-
-            marginBottom: "2.5rem",
-          }}
-        >
-          <Image
-            src="/logo.png"
-            alt="The Date Curator — By Luxury Proposal"
-            width={280}
-            height={200}
-            priority
-            className="mx-auto w-[220px] md:w-[280px] h-auto"
-          />
-        </div>
+   
 
         {/* Tagline */}
         <p
@@ -142,7 +125,7 @@ export default function HeroSection({ containerRef }: Props) {
             animation: "fadeUp 1s ease 1s forwards",
           }}
         >
-          <span className="gold-text">Love, Crafted</span>
+          <span className="gold-text">Curated Moments. Unforgettable Dates.</span>
           <br />
           <span style={{ color: "var(--cream)", fontWeight: 300 }}>
             to Perfection
