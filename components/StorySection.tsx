@@ -80,7 +80,7 @@ export default function StorySection() {
               textTransform: "uppercase",
             }}
           >
-            <span>Our Philosophy</span>
+            <span>Brand Story </span>
             <div
               style={{
                 height: 1,
@@ -100,12 +100,12 @@ export default function StorySection() {
               fontWeight: 400,
             }}
           >
-            Every Love Story
+           Romance Should Never Feel Ordinary
+
             <br />
             <span className="gold-text">Deserves a Chapter</span>
             <br />
-            Worth Remembering
-          </h2>
+In the middle of busy lives, romance often gets forgotten. The Date Curator was created to make meaningful moments easy again.          </h2>
 
           {/* Body text */}
           <p
@@ -117,11 +117,7 @@ export default function StorySection() {
               lineHeight: 2,
             }}
           >
-            We believe that the most profound moments in life deserve to be
-            experienced with intention, elegance, and deep personal meaning. The
-            Date Curator transforms ordinary evenings into extraordinary
-            memories — bespoke date experiences designed exclusively for
-            discerning couples in Nairobi and beyond.
+           From intimate picnics to luxury date nights, we design personalised experiences that help couples reconnect, celebrate love, and create unforgettable memories without the stress of planning.
           </p>
 
           <p

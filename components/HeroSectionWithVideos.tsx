@@ -178,7 +178,7 @@ export default function HeroSectionWithVideos({ containerRef }: Props) {
               letterSpacing: "0.25em",
             }}
           >
-            <Link href="instagram.com/thedatecurator.ke/?hl=de" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com/thedatecurator.ke?igsh=b2FncW9uZ2p5aGlz" target="_blank" rel="noopener noreferrer">
               Instagram
             </Link>
             &nbsp;·&nbsp;
